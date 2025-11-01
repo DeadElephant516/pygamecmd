@@ -3,6 +3,7 @@ import ui
 from CONSTANTS import COLORS, WINDOW_WIDTH, WINDOW_HEIGHT, FPS
 from game import game
 import commands
+import utils
 
 pygame.init()
 
@@ -47,6 +48,7 @@ while running:
     room_text = current_room_data["description"]
     exits = list(current_room_data["exits"].keys())
     exits_text = ", ".join(exits)
+    area_items = utils.show_nearby_items(game)
 
     # Draw the image box background
     ui.draw_image_box(screen)
@@ -59,6 +61,7 @@ while running:
     ui.draw_room_text(screen, f"You are in {game['current_area']}", room_font, 20,COLORS["WHITE"])
     ui.draw_room_text(screen,room_text,room_font,50,COLORS["WHITE"])
     ui.draw_room_text(screen,f"Exits: {exits_text}",room_font,120,COLORS["YELLOW"])
+    ui.draw_room_text(screen, f"{area_items}", room_font, 150, COLORS["YELLOW"])
     ui.draw_response_box(screen)
     ui.draw_response_text(screen,result,room_font,20,COLORS["YELLOW"])
 

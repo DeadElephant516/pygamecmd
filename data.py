@@ -8,13 +8,14 @@ bg_4 = pygame.image.load("assets/background4.jpg")
 bg_5 = pygame.image.load("assets/background5.jpg")
 bg_6 = pygame.image.load("assets/background6.jpg")
 
+
 areas = {
     "area_a": {
         "description": "first test room",
         "image" : bg_1,
         "area" : "test zone",
         "exits": {"east": "area_b"},
-        "items": [],
+        "items": ["hp_pot", "atk_pot"],
         "enemy": None,
     },
     "area_b": {
@@ -22,7 +23,7 @@ areas = {
         "image" : bg_2,
         "area" : "test zone",
         "exits": {"west": "area_a", "south": "area_c"},
-        "items": [],
+        "items": ["dagger"],
         "enemy": None,
     },
     "area_c": {
