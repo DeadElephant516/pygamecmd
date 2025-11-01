@@ -12,6 +12,7 @@ def get_item(cmd,game):
             inv = game["inventory"]
             inv.append(item_name)
             current_area["items"].remove(item_name)
-            return f"You picked up {item_name}"
+            item_name_format = item_name.replace("_"," ")
+            return f"You picked up {item_name_format}"
         else:
             return "There is nothing like that here"
